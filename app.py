@@ -41,7 +41,7 @@ import os
 st.set_page_config(page_title="LLM ChatBot", page_icon='🤖')
 
 # load custom scss
-with open("llm/style.scss") as f:
+with open("style.scss") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 def clear_chat():
