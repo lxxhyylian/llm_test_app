@@ -40,10 +40,6 @@ import os
 
 st.set_page_config(page_title="LLM ChatBot", page_icon='🤖')
 
-# load custom scss
-with open("style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
 def clear_chat():
     st.session_state.chat_history = []
 
@@ -68,10 +64,10 @@ if user_query is not None and user_query != "":
     # st.session_state.chat_history.append(HumanMessage(user_query))
 
     with st.chat_message("Human"):
-        st.markdown(f"<div class='chat-message'>{user_query}</div>", unsafe_allow_html=True)
+        st.markdown(f"{user_query}", unsafe_allow_html=True)
     
     with st.chat_message("AI"):
         # response = get_response(user_query, st.session_state.chat_history)
         response = 'hehe'
         # st.session_state.chat_history.append(AIMessage(response))
-        st.markdown(f"<div class='chat-message'>{response}</div>", unsafe_allow_html=True)
+        st.markdown(f"{response}", unsafe_allow_html=True)
